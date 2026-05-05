@@ -9,6 +9,11 @@ Before(async function () {
 });
 
 After(async function () {
+    if(scenario.result.status === FAILED)
+    {
+        const screenshot = await this.page.screenshot({fullPage: true});
+        this.attach(screenshot, 'image/png');
+    }
     await this.page.close();
     await this.context.close();
     await this.browser.close();
