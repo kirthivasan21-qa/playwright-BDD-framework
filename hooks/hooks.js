@@ -9,7 +9,7 @@ Before(async function () {
 });
 
 After(async function () {
-    if(scenario.result.status === FAILED)
+    if(scenario.result.status === 'FAILED')
     {
         const screenshot = await this.page.screenshot({fullPage: true});
         this.attach(screenshot, 'image/png');
