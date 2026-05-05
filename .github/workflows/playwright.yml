@@ -23,6 +23,10 @@ jobs:
 
       - name: Run Playwright tests
         run: npm test
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
 
       - uses: actions/upload-artifact@v5
         if: always()

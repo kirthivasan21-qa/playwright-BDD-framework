@@ -7,8 +7,8 @@ Given('the user is in OrangeHRM login page', async function () {
     await this.loginPage.goto();
 });
 
-When('I enter username {string} and password {string}', async function (username, password) {
-    await this.loginPage.login(username, password);
+When('I enter username and password', async function () {
+    await this.loginPage.login(process.env.USERNAME, process.env.PASSWORD);
 });
 
 Then('the dashboard is visible', async function () {

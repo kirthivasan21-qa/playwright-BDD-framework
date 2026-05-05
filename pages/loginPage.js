@@ -7,7 +7,7 @@ class LoginPage{
     }
     async goto()
     {
-        await this.page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+        await this.page.goto(process.env.BASE_URL);
         await this.page.waitForLoadState('networkidle');
     }
     async login(username, password)
