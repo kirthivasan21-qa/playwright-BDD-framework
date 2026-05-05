@@ -12,6 +12,7 @@ When('I enter username and password', async function () {
 });
 
 Then('the dashboard is visible', async function () {
+    await this.page.waitForURL('**/dashboard/**');
     const dashboardHeader = this.page.locator('h6.oxd-text--h6');
     await expect(dashboardHeader).toHaveText('Dashboard');
 });
