@@ -8,7 +8,7 @@ Before(async function () {
     this.page = await this.context.newPage();
 });
 
-After(async function () {
+After(async function (scenario) {
     if(scenario.result.status === 'FAILED')
     {
         const screenshot = await this.page.screenshot({fullPage: true});
