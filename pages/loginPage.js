@@ -8,7 +8,7 @@ class LoginPage{
     async goto()
     {
         await this.page.goto(process.env.BASE_URL);
-        await this.page.waitForLoadState('networkidle');
+        await this.page.waitForLoadState('domcontentloaded');
     }
     async login(username, password)
     {
